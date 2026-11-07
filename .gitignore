@@ -2,3 +2,5 @@
 data
 project-defenition
 __pycache__/
+# files
+reports/preprocess/a5_duplicate_audit.sqlite
