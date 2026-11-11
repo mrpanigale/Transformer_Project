@@ -1,0 +1,2 @@
+"""Digikala review inference service."""
+
