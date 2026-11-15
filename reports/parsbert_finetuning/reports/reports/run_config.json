@@ -1,0 +1,29 @@
+{
+  "checkpoint": "HooshvareLab/bert-fa-base-uncased",
+  "seed": 2026,
+  "train_rows": 2000000,
+  "max_length": 40,
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "effective_batch": 32,
+  "epochs": 2,
+  "train_sampling": "seeded uniform sample by source row index",
+  "train_sample_seed": 2026,
+  "encoder_lr": 2e-05,
+  "head_lr": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.06,
+  "validation_monitor_size": 100000,
+  "validation_monitor_seed": 2026,
+  "gpu": "Tesla T4",
+  "vram_gb": 14.56,
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "split_seed": 2026,
+  "split_strategy": "deterministic greedy product-group assignment",
+  "rating_band_thresholds": {
+    "low": "0 <= rate < 2.5",
+    "medium": "2.5 <= rate < 4.0",
+    "high": "4.0 <= rate <= 5.0"
+  }
+}
