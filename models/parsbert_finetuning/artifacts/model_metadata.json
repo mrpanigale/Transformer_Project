@@ -1,0 +1,96 @@
+{
+  "base_checkpoint": "HooshvareLab/bert-fa-base-uncased",
+  "input": "body",
+  "max_length": 40,
+  "targets": {
+    "recommendation_status": [
+      "recommended",
+      "not_recommended",
+      "no_idea"
+    ],
+    "rating_band": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "rating_band_thresholds": {
+    "low": "0 <= rate < 2.5",
+    "medium": "2.5 <= rate < 4.0",
+    "high": "4.0 <= rate <= 5.0"
+  },
+  "training_config": {
+    "checkpoint": "HooshvareLab/bert-fa-base-uncased",
+    "seed": 2026,
+    "train_rows": 2000000,
+    "max_length": 40,
+    "batch_size": 8,
+    "gradient_accumulation": 4,
+    "effective_batch": 32,
+    "epochs": 2,
+    "train_sampling": "seeded uniform sample by source row index",
+    "train_sample_seed": 2026,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "validation_monitor_size": 100000,
+    "validation_monitor_seed": 2026,
+    "gpu": "Tesla T4",
+    "vram_gb": 14.56,
+    "torch": "2.14.1+cu130",
+    "transformers": "4.57.6",
+    "split_seed": 2026,
+    "split_strategy": "deterministic greedy product-group assignment",
+    "rating_band_thresholds": {
+      "low": "0 <= rate < 2.5",
+      "medium": "2.5 <= rate < 4.0",
+      "high": "4.0 <= rate <= 5.0"
+    }
+  },
+  "best_validation_monitor_mean_macro_f1": 0.6524273432532868,
+  "metrics": [
+    {
+      "split": "validation-full",
+      "target": "recommendation_status",
+      "n": 789204,
+      "Accuracy": 0.8775284970679318,
+      "Macro F1": 0.7071938994979016,
+      "Macro Precision": 0.730728720567832,
+      "Macro Recall": 0.6976702012136459,
+      "Balanced Accuracy": 0.6976702012136459
+    },
+    {
+      "split": "validation-full",
+      "target": "rating_band",
+      "n": 923348,
+      "Accuracy": 0.7509173139488037,
+      "Macro F1": 0.5967691559106333,
+      "Macro Precision": 0.684879603424671,
+      "Macro Recall": 0.5639784100841676,
+      "Balanced Accuracy": 0.5639784100841676
+    },
+    {
+      "split": "test-full",
+      "target": "recommendation_status",
+      "n": 789204,
+      "Accuracy": 0.8779149624178286,
+      "Macro F1": 0.7085738296221092,
+      "Macro Precision": 0.7320307994414045,
+      "Macro Recall": 0.6989629376167296,
+      "Balanced Accuracy": 0.6989629376167296
+    },
+    {
+      "split": "test-full",
+      "target": "rating_band",
+      "n": 923348,
+      "Accuracy": 0.7508707442914264,
+      "Macro F1": 0.597262943334138,
+      "Macro Precision": 0.6855475803176997,
+      "Macro Recall": 0.5643095401239324,
+      "Balanced Accuracy": 0.5643095401239324
+    }
+  ],
+  "weight_file": "model.safetensors",
+  "tokenizer_dir": "tokenizer"
+}
