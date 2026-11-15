@@ -1,0 +1,91 @@
+{
+  "input": "pre-normalized body from split_body_cleaned; no metadata features",
+  "targets": {
+    "recommendation_status": [
+      "recommended",
+      "not_recommended",
+      "no_idea"
+    ],
+    "rating_band": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "split_manifest_sha256": "630cd5c0a34f4f5cd759124e10bd889a2c2d76d472621bb370fd48ae964e3027",
+  "split_seed": 2026,
+  "rating_band_thresholds": {
+    "low": "0 <= rate < 2.5",
+    "medium": "2.5 <= rate < 4.0",
+    "high": "4.0 <= rate <= 5.0"
+  },
+  "normalization": {
+    "Arabic yeh/kaf": "convert to Persian forms",
+    "HTML": "decode entities and remove tags",
+    "URLs": "replace with <URL>",
+    "whitespace": "collapse and trim",
+    "invisible marks": "remove; preserve Persian ZWNJ",
+    "numbers": "preserve",
+    "emoji": "preserve",
+    "negation": "preserve"
+  },
+  "train_rows_loaded": 3572367,
+  "train_limit": null,
+  "sampling_seed": 2026,
+  "sampling_rule": "load_split: full split when limit=None; otherwise seeded chunk sampling",
+  "versions": {
+    "python": "3.14.0",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "joblib": "1.6.0"
+  },
+  "models": {
+    "recommendation_status": {
+      "artifact": "recommendation_status.joblib",
+      "sha256": "de8d8568c257befb6013331cd884a19c57976d325c44130673810385c81f883f",
+      "classes_in_probability_order": [
+        "no_idea",
+        "not_recommended",
+        "recommended"
+      ],
+      "labeled_training_rows": 2946365,
+      "vocabulary_size": 300000,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "max_features": 300000,
+      "class_weight": "balanced",
+      "solver": "lbfgs",
+      "max_iter": 300,
+      "n_iter": [
+        300
+      ],
+      "iteration_limit_reached": true
+    },
+    "rating_band": {
+      "artifact": "rating_band.joblib",
+      "sha256": "3c5ad7b9e21841ca7c48e067a37125a32f24f9cbdf8b62a2f01ea7a4fed75e9f",
+      "classes_in_probability_order": [
+        "high",
+        "low",
+        "medium"
+      ],
+      "labeled_training_rows": 3572366,
+      "vocabulary_size": 300000,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "max_features": 300000,
+      "class_weight": "balanced",
+      "solver": "lbfgs",
+      "max_iter": 300,
+      "n_iter": [
+        300
+      ],
+      "iteration_limit_reached": true
+    }
+  }
+}
