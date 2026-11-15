@@ -1,0 +1,143 @@
+{
+  "split_manifest_sha256": "630cd5c0a34f4f5cd759124e10bd889a2c2d76d472621bb370fd48ae964e3027",
+  "evaluation_files": {
+    "validation": {
+      "file": "data\\clean_data\\split_body_cleaned\\validation.csv",
+      "sha256": "8477c2c7913c96f15c592d1b0581592cde08bfb037799511b485d98a20352f44",
+      "rows": 923348
+    },
+    "test": {
+      "file": "data\\clean_data\\split_body_cleaned\\test.csv",
+      "sha256": "b87109cab218473e2ff37f366749b9d39f26d1c815b9f9eec34931c999f17acf",
+      "rows": 923348
+    }
+  },
+  "evaluation": "complete validation/test; independent valid-target masks; no fit or sampling",
+  "parsbert_metrics_sha256": "bce118c16a592c528017f181beb5213bb2de7218b0068cf896b6a97934eedb19",
+  "parsbert_config_sha256": "a96a46bedb33e8a0a02ef46c54f6bb0e25155435e54c2bb5c6cc9167bd764b69",
+  "baseline_training": {
+    "input": "pre-normalized body from split_body_cleaned; no metadata features",
+    "targets": {
+      "recommendation_status": [
+        "recommended",
+        "not_recommended",
+        "no_idea"
+      ],
+      "rating_band": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "split_manifest_sha256": "630cd5c0a34f4f5cd759124e10bd889a2c2d76d472621bb370fd48ae964e3027",
+    "split_seed": 2026,
+    "rating_band_thresholds": {
+      "low": "0 <= rate < 2.5",
+      "medium": "2.5 <= rate < 4.0",
+      "high": "4.0 <= rate <= 5.0"
+    },
+    "normalization": {
+      "Arabic yeh/kaf": "convert to Persian forms",
+      "HTML": "decode entities and remove tags",
+      "URLs": "replace with <URL>",
+      "whitespace": "collapse and trim",
+      "invisible marks": "remove; preserve Persian ZWNJ",
+      "numbers": "preserve",
+      "emoji": "preserve",
+      "negation": "preserve"
+    },
+    "train_rows_loaded": 3572367,
+    "train_limit": null,
+    "sampling_seed": 2026,
+    "sampling_rule": "load_split: full split when limit=None; otherwise seeded chunk sampling",
+    "versions": {
+      "python": "3.14.0",
+      "sklearn": "1.9.1",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "joblib": "1.6.0"
+    },
+    "models": {
+      "recommendation_status": {
+        "artifact": "recommendation_status.joblib",
+        "sha256": "de8d8568c257befb6013331cd884a19c57976d325c44130673810385c81f883f",
+        "classes_in_probability_order": [
+          "no_idea",
+          "not_recommended",
+          "recommended"
+        ],
+        "labeled_training_rows": 2946365,
+        "vocabulary_size": 300000,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "max_features": 300000,
+        "class_weight": "balanced",
+        "solver": "lbfgs",
+        "max_iter": 300,
+        "n_iter": [
+          300
+        ],
+        "iteration_limit_reached": true
+      },
+      "rating_band": {
+        "artifact": "rating_band.joblib",
+        "sha256": "3c5ad7b9e21841ca7c48e067a37125a32f24f9cbdf8b62a2f01ea7a4fed75e9f",
+        "classes_in_probability_order": [
+          "high",
+          "low",
+          "medium"
+        ],
+        "labeled_training_rows": 3572366,
+        "vocabulary_size": 300000,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "max_features": 300000,
+        "class_weight": "balanced",
+        "solver": "lbfgs",
+        "max_iter": 300,
+        "n_iter": [
+          300
+        ],
+        "iteration_limit_reached": true
+      }
+    }
+  },
+  "parsbert_training": {
+    "checkpoint": "HooshvareLab/bert-fa-base-uncased",
+    "seed": 2026,
+    "train_rows": 2000000,
+    "max_length": 40,
+    "batch_size": 8,
+    "gradient_accumulation": 4,
+    "effective_batch": 32,
+    "epochs": 2,
+    "train_sampling": "seeded uniform sample by source row index",
+    "train_sample_seed": 2026,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "validation_monitor_size": 100000,
+    "validation_monitor_seed": 2026,
+    "gpu": "Tesla T4",
+    "vram_gb": 14.56,
+    "torch": "2.14.1+cu130",
+    "transformers": "4.57.6",
+    "split_seed": 2026,
+    "split_strategy": "deterministic greedy product-group assignment",
+    "rating_band_thresholds": {
+      "low": "0 <= rate < 2.5",
+      "medium": "2.5 <= rate < 4.0",
+      "high": "4.0 <= rate <= 5.0"
+    }
+  },
+  "limitations": [
+    "Historical ParsBERT input hashes are unavailable; counts/config agreement does not prove file identity.",
+    "Training sizes/sampling differ; this is not an equal-training-subset ablation.",
+    "ParsBERT ordinal distance and per-class metrics are not included in the imported metrics CSV."
+  ]
+}

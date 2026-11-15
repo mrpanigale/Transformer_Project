@@ -1,0 +1,4 @@
+﻿true_label / predicted_label,low,medium,high
+low,84288,35168,44373
+medium,28955,80905,48982
+high,48011,110051,442615

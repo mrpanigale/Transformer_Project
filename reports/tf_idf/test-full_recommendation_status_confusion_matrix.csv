@@ -1,0 +1,4 @@
+﻿true_label / predicted_label,recommended,not_recommended,no_idea
+recommended,524722,15044,84596
+not_recommended,2701,59523,13506
+no_idea,17901,19673,51538
