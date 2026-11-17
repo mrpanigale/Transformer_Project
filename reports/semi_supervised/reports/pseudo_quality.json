@@ -1,0 +1,22 @@
+{
+  "accepted_rows": 535977,
+  "pool_rows": 736589,
+  "coverage_percent": 72.76473039917784,
+  "accepted_class_counts": {
+    "recommended": 513191,
+    "not_recommended": 22633,
+    "no_idea": 153
+  },
+  "accepted_pseudo_label_accuracy": 0.9664966966866115,
+  "reference_sha256": "d73961b0e7ab635940bd0ea7990224a3c54a2116b679a4f45924111570b01df2",
+  "audit_unix": 1794849645.6772192,
+  "training_finished_unix": 1794845624.7467053,
+  "metrics": {
+    "n": 535977,
+    "Accuracy": 0.9664966966866115,
+    "Macro F1": 0.6411186712190425,
+    "Macro Precision": 0.9334186572393124,
+    "Macro Recall": 0.6431548284765268,
+    "Balanced Accuracy": 0.6431548284765268
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "5ab26206f98d63a5cb60c51b8716115c1f8d56035ec17e2032eea58b9683db90",
+  "reason": "early_stopping",
+  "completed_batches": 160000,
+  "total_batches": 316998,
+  "best_step": 20000,
+  "best_validation_mean_macro_f1": 0.6594575226565866,
+  "best_sha256": "6e635917ee49b5c8deee1d3985b0e502d98def9021f6d71d3554eba67b9a3639",
+  "finished_unix": 1794845624.7467053
+}

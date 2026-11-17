@@ -1,0 +1,18 @@
+{
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "numpy": "2.4.6",
+  "pandas": "2.2.3",
+  "sklearn": "1.6.1",
+  "gpu": "Tesla T4",
+  "total_parameters": 162845958,
+  "trainable_parameters": 162845958,
+  "encoder_config_sha256": "7d2bbbc884942befd06f63f6b90e5302c534bb60e6600fe14af5e58a821dedc9",
+  "early_stopping": "two non-improving validation checks; max one additional epoch",
+  "selection": "highest mean Macro F1 of both heads among semi-supervised validation checks",
+  "differences_from_supervised": [
+    "one additional epoch maximum",
+    "validation every 10000 optimizer steps",
+    "inference batch 64; training effective batch stays 32"
+  ]
+}

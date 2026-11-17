@@ -1,0 +1,22 @@
+{
+  "mean_macro_f1": 0.6524407718764721,
+  "targets": {
+    "recommendation_status": {
+      "n": 85455,
+      "Accuracy": 0.8780878825112632,
+      "Macro F1": 0.7068059368210405,
+      "Macro Precision": 0.731083267309422,
+      "Macro Recall": 0.6951315380602369,
+      "Balanced Accuracy": 0.6951315380602369
+    },
+    "rating_band": {
+      "n": 100000,
+      "Accuracy": 0.75263,
+      "Macro F1": 0.5980756069319036,
+      "Macro Precision": 0.6876051171191851,
+      "Macro Recall": 0.5646550784910708,
+      "Balanced Accuracy": 0.5646550784910708,
+      "Ordinal MAE": 0.3334
+    }
+  }
+}

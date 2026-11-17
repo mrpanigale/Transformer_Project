@@ -1,0 +1,27 @@
+{
+  "run_id": "5ab26206f98d63a5cb60c51b8716115c1f8d56035ec17e2032eea58b9683db90",
+  "inputs": {
+    "train_supervised.csv": "ae4b990f281707167cc7b06ee49ac39390518642bc4bae86eeb62aec7c48c76d",
+    "train_pseudo_unlabeled.csv": "fb0e37c60bd6bb087cc855ecbaaff75c4772420a5f3d78187c14931258a898d9",
+    "validation.csv": "8477c2c7913c96f15c592d1b0581592cde08bfb037799511b485d98a20352f44",
+    "test.csv": "b87109cab218473e2ff37f366749b9d39f26d1c815b9f9eec34931c999f17acf",
+    "split_manifest.json": "630cd5c0a34f4f5cd759124e10bd889a2c2d76d472621bb370fd48ae964e3027",
+    "model.safetensors": "1b42efe0b5b4afb9fa6eb2615c499bca9242a6dc2101c8649dd7505b814b2faf",
+    "model_metadata.json": "e5d735beef6c91357e28cb38d54fcfa8c10443e7738b35f18beeb6879c41de2f",
+    "tokenizer": {
+      "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "tokenizer.json": "1760b84eb991e6279303303666c9f833c61f197f9891ec70dbb6c4bb89cc7c57",
+      "tokenizer_config.json": "5270e631bb61f4559a544c0d6be1941c63fe2418f7a09ce26638c6215368dec5",
+      "vocab.txt": "52caaab7b946d44c931f7d37322f72ee818c60d5ee7d23f41a6c641fa72b9d36"
+    }
+  },
+  "selection": "validation monitor only; no test selection",
+  "supervised_model_sha256": "1b42efe0b5b4afb9fa6eb2615c499bca9242a6dc2101c8649dd7505b814b2faf",
+  "semi_supervised_model_sha256": "6e635917ee49b5c8deee1d3985b0e502d98def9021f6d71d3554eba67b9a3639",
+  "evaluation": "full validation and test; independent masks per target",
+  "limitations": [
+    "Different additional training exposure; no extra supervised-only continuation control.",
+    "Historical supervised input hashes are unavailable; same subset reconstructed from recorded seed and row indices.",
+    "Floating point results can vary slightly between GPU types and library versions."
+  ]
+}
