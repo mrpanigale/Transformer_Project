@@ -1,0 +1,56 @@
+{
+  "base_checkpoint": "HooshvareLab/bert-fa-base-uncased",
+  "input": "body",
+  "targets": {
+    "recommendation_status": [
+      "recommended",
+      "not_recommended",
+      "no_idea"
+    ],
+    "rating_band": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "max_length": 40,
+  "rating_band_thresholds": {
+    "low": "0 <= rate < 2.5",
+    "medium": "2.5 <= rate < 4.0",
+    "high": "4.0 <= rate <= 5.0"
+  },
+  "training_config": {
+    "seed": 2026,
+    "threshold": 0.9,
+    "train_size": 2000000,
+    "max_length": 40,
+    "batch_size": 8,
+    "accumulation": 4,
+    "inference_batch": 64,
+    "epochs": 1,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "chunk_rows": 20000,
+    "monitor_size": 100000,
+    "eval_every": 10000,
+    "patience": 2
+  },
+  "supervised_weight_sha256": "1b42efe0b5b4afb9fa6eb2615c499bca9242a6dc2101c8649dd7505b814b2faf",
+  "selected_checkpoint": {
+    "run_id": "5ab26206f98d63a5cb60c51b8716115c1f8d56035ec17e2032eea58b9683db90",
+    "reason": "early_stopping",
+    "completed_batches": 160000,
+    "total_batches": 316998,
+    "best_step": 20000,
+    "best_validation_mean_macro_f1": 0.6594575226565866,
+    "best_sha256": "6e635917ee49b5c8deee1d3985b0e502d98def9021f6d71d3554eba67b9a3639",
+    "finished_unix": 1794845624.7467053
+  },
+  "total_parameters": 162845958,
+  "trainable_parameters": 162845958,
+  "weight_file": "model.safetensors",
+  "tokenizer_dir": "tokenizer",
+  "encoder_config_dir": "encoder_config"
+}
