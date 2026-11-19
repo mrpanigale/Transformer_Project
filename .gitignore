@@ -6,3 +6,6 @@ __pycache__/
 # files
 reports/preprocess/a5_duplicate_audit.sqlite
 
+/notebooks/*
+!/notebooks/parsbert_finetuning_colab_fixed.ipynb
+!/notebooks/04_semi_supervised_colab.ipynb
