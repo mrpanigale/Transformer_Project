@@ -62,7 +62,7 @@ python -m pip install -r requirements.txt
 
 **نکته:** اجرای آموزش‌ها و ممیزی کل داده‌ها ممکن است زمان‌بر باشد و به فضای ذخیره‌سازی و حافظه کافی نیاز دارد.
 
-> دو نوت‌بوک `notebooks/parsbert_finetuning_colab_fixed.ipynb` و `notebooks/04_semi_supervised_colab.ipynb` در نسخه فعلی این پوشه وجود دارند، اما هنگام نگارش این راهنما در Git ردیابی نمی‌شوند. بنابراین برای اجرای مراحل مربوط به آن‌ها باید این فایل‌ها را جداگانه همراه پروژه داشته باشید. پوشه `notebooks` در `.gitignore` قرار دارد.
+> دو نوت‌بوک `notebooks/parsbert_finetuning_colab_fixed.ipynb` و `notebooks/04_semi_supervised_colab.ipynb` در نسخه فعلی این پوشه وجود دارد.
 
 ---
 
