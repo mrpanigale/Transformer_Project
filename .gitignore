@@ -1,7 +1,6 @@
 .idea/
 data
 project-defenition
-notebooks
 __pycache__/
 # files
 reports/preprocess/a5_duplicate_audit.sqlite
